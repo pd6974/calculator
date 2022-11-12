@@ -1,5 +1,6 @@
 .container {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .numbers {
@@ -15,7 +16,19 @@
     padding: 12px;
 }
 
-.gridButton, .operatorButton {
+.button-2, 
+.button-1,  
+.button0,
+.button1,
+.button2,
+.button3,
+.button4,
+.button5,
+.button6,
+.button7,
+.button8,
+.button9,
+.operatorButton {
     background-color: grey;
     display: flex;
     margin: 0px;
@@ -42,3 +55,14 @@
     padding: 12px;
 }
 
+.display {
+    width: 500px;
+    height: 100px;
+    background-color: aqua;
+    margin: 24px;
+    padding: 12px;
+    background-color: grey;
+    font-size: xx-large;
+    color:aliceblue;
+    font-weight: 800;
+}

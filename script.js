@@ -8,7 +8,7 @@ function makeGrid() {
     for (let i = -2; i <= 9; i++) {
             const gridButton = document.createElement('button');
             container.appendChild(gridButton);
-            gridButton.classList.add('gridButton');
+            gridButton.classList.add(`button${i}`);
             if (i == -1){
                 gridButton.textContent = "Enter"
             } else if (i == -2) {
