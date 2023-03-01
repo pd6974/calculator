@@ -12,7 +12,7 @@
     justify-content: center;
     width: 400px;
     height: 500px;
-    margin: 24px;
+    margin: 24px 0px 24px 24px;
     padding: 12px;
 }
 
@@ -40,8 +40,6 @@
     font-weight: 800;
 }
 
-
-
 .operators {
     display: grid;
     grid-template-rows: repeat(4, 1fr);
@@ -51,9 +49,11 @@
     justify-content: center;
     width: 100px;
     height: 500px;
-    margin: 24px;
+    margin: 24px 24px 24px 0px;
     padding: 12px;
 }
+
+
 
 .display {
     width: 500px;
