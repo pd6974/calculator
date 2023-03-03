@@ -19,7 +19,7 @@ container.addEventListener("click", (e) => {
         ope = e.target.id
     }
     else if (e.target.id == "Enter") {
-        console.log(solve(x, ope))
+        displayDiv.textContent = (solve(x, ope))
     }
     displayNumber(e);
 });
