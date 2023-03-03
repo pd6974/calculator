@@ -2,7 +2,7 @@
 const numbersDiv = document.querySelector('.numbers');
 makeGrid();
 
-const operators = ['+', '-', '*', '/'];
+const operators = ['/', '*', '-', '+'];
 
 // add operators to calculator
 const operatorsDiv = document.querySelector('.operators');
@@ -21,6 +21,8 @@ container.addEventListener("click", (e) => {
     else if (e.target.id == "Enter") {
         displayDiv.textContent = (solve(x, ope))
     }
+
+    //function to display the numbers
     displayNumber(e);
 });
 
@@ -28,10 +30,10 @@ container.addEventListener("click", (e) => {
 function solve(a, op) {
     b = Number(displayDiv.textContent)
     a = Number(a)
-    return operate(ope, a, b)
+    return operate(op, a, b)
 }
 
-// How can I get the variables in the first if statement to carry into the else if?
+
 function logIt(e) {
         return displayDiv.textContent
 }
@@ -42,7 +44,7 @@ function displayNumber(e) {
         if (!isNaN(e.target.id)) {
             var clickedItem = e.target.id;
             displayDiv.textContent += clickedItem
-        } else if (e.target.id == "Clear") {
+        } else if (e.target.id == "AC") {
             displayDiv.textContent = ""
         }
         else if (e.target.id == "Enter") {
@@ -66,8 +68,8 @@ function makeGrid() {
                 gridButton.textContent = "Enter"
                 gridButton.setAttribute('id', "Enter")
             } else if (i == -2) {
-                gridButton.textContent = "Clear"
-                gridButton.setAttribute('id', "Clear")
+                gridButton.textContent = "AC"
+                gridButton.setAttribute('id', "AC")
             } else {
             gridButton.textContent = `${i}`;
             gridButton.setAttribute('id', `${[i]}`)

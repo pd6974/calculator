@@ -1,19 +1,52 @@
+.box {
+    display: flex;
+    flex-direction: column;
+    border-style: groove;
+    align-items: center;
+    border-color: seagreen;
+    box-shadow:
+    inset #009688 0 0 0 5px, 
+    inset #059c8e 0 0 0 1px, 
+    inset #0cab9c 0 0 0 10px, 
+    inset #1fbdae 0 0 0 11px, 
+    inset #8ce9ff 0 0 0 16px, 
+    inset #48e4d6 0 0 0 17px, 
+    inset #e5f9f7 0 0 0 21px, 
+    inset #bfecf7 0 0 0 22px;
+    padding: 50px;
+}
+
+/* I want this to have the inset border and then a seashell border around the browser */
+
+.calc {
+    display: flex;
+    flex-direction: column;
+    border-style: groove;
+    align-items: center;
+    border-color: seagreen;
+    box-shadow:
+    inset #009688 0 0 0 5px, 
+    inset #059c8e 0 0 0 1px, 
+    inset #0cab9c 0 0 0 10px, 
+    inset #1fbdae 0 0 0 11px, 
+    inset #8ce9ff 0 0 0 16px, 
+    inset #48e4d6 0 0 0 17px, 
+    inset #e5f9f7 0 0 0 21px, 
+    inset #bfecf7 0 0 0 22px;
+}
+
 .container {
     display: flex;
-    flex-wrap: wrap;
 }
 
 .numbers {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 2fr);
     column-gap: 0px;
     row-gap: 0px;
     justify-items: center;
     justify-content: center;
-    width: 400px;
-    height: 500px;
-    margin: 24px 0px 24px 24px;
-    padding: 12px;
+
 }
 
 .button-2, 
@@ -29,7 +62,7 @@
 .button8,
 .button9,
 .operatorButton {
-    background-color: grey;
+    background-color: seagreen;
     display: flex;
     margin: 0px;
     justify-self: stretch;
@@ -38,6 +71,9 @@
     font-size: xx-large;
     color:aliceblue;
     font-weight: 800;
+    padding: 12px;
+    height: 95px;
+    width: 95px;
 }
 
 .operators {
@@ -47,21 +83,15 @@
     row-gap: 0px;
     justify-items: center;
     justify-content: center;
-    width: 100px;
-    height: 500px;
-    margin: 24px 24px 24px 0px;
-    padding: 12px;
 }
 
 
 
 .display {
-    width: 500px;
+    width: 358px;
     height: 100px;
     background-color: aqua;
-    margin: 24px;
     padding: 12px;
-    background-color: grey;
     font-size: xx-large;
     color:aliceblue;
     font-weight: 800;
