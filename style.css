@@ -87,12 +87,23 @@
 
 
 
-.display {
+.screen {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
     width: 358px;
     height: 100px;
     background-color: aqua;
     padding: 12px;
     font-size: xx-large;
-    color:aliceblue;
+    color:black;
     font-weight: 800;
+}
+
+.holding {
+    height: 50px;
+}
+
+.display {
+    height: 50px;
 }

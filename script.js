@@ -8,18 +8,22 @@ const operators = ['/', '*', '-', '+'];
 const operatorsDiv = document.querySelector('.operators');
 makeOperatorGrid();
 
-// select display and allow numbers to appear
+// select display and container to allow numbers to appear
 const displayDiv = document.querySelector('.display');
-
-const container = document.querySelector('.container')
+const holder = document.querySelector('.holding');
+const container = document.querySelector('.container');
 
 container.addEventListener("click", (e) => {
     if(e.target.id == "*" || e.target.id == "+" || e.target.id == "-" || e.target.id == "/") {
         x = logIt(e);
         ope = e.target.id
+        holder.textContent = x
+        holder.textContent += ope
+        displayDiv.textContent = ""
     }
     else if (e.target.id == "Enter") {
         displayDiv.textContent = (solve(x, ope))
+        holder.textContent = ""
     }
 
     //function to display the numbers
@@ -53,9 +57,7 @@ function displayNumber(e) {
             var clickedItem = e.target.id
             displayDiv.textContent = ""
         }
-
     }
-
 }
 
 // logic for creating number grid
@@ -85,17 +87,6 @@ function makeOperatorGrid () {
         operatorButton.classList.add('operatorButton');
         operatorButton.setAttribute('id', `${operators[i]}`)
         operatorButton.textContent = `${operators[i]}`
-    }
-}
-
-// logic to add click event listeners to calculator >> research how to add event listeners in a loop
-function clickToDisplay () {
-    for (let i = -2; i <= 9; i++) {
-        const numbers = document.querySelector(`.button${i}`);
-        numbers.addEventListener('click', () => {
-            temp = i
-            displayDiv.textContent = temp
-        })
     }
 }
 
