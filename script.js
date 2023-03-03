@@ -12,13 +12,27 @@ makeOperatorGrid();
 const displayDiv = document.querySelector('.display');
 const holder = document.querySelector('.holding');
 const container = document.querySelector('.container');
+let hold
+
 
 container.addEventListener("click", (e) => {
-    if(e.target.id == "*" || e.target.id == "+" || e.target.id == "-" || e.target.id == "/") {
-        x = logIt(e);
+    //I don't love the display holding the previous operator because it looks a little weird, but the calculator works!
+    if((holder.textContent === hold) && (e.target.id == "*" || e.target.id == "+" || e.target.id == "-" || e.target.id == "/")) {
+        x = holder.textContent.slice(1)
+        console.log(x)
         ope = e.target.id
-        holder.textContent = x
-        holder.textContent += ope
+        newHoldNumber = solve(x, ope)
+        hold = ope + " " + newHoldNumber 
+        holder.textContent = hold
+        displayDiv.textContent = ""
+        console.log("Gotcha!")
+        console.log(hold)
+    }
+    else if(e.target.id == "*" || e.target.id == "+" || e.target.id == "-" || e.target.id == "/") {
+        x = displayDiv.textContent;
+        ope = e.target.id
+        hold = ope + x
+        holder.textContent = hold
         displayDiv.textContent = ""
     }
     else if (e.target.id == "Enter") {
@@ -50,6 +64,7 @@ function displayNumber(e) {
             displayDiv.textContent += clickedItem
         } else if (e.target.id == "AC") {
             displayDiv.textContent = ""
+            holder.textContent = ""
         }
         else if (e.target.id == "Enter") {
             
