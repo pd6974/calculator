@@ -37,6 +37,8 @@
 
 .container {
     display: flex;
+    border-style: hidden;
+    background-color: aqua;
 }
 
 .numbers {
@@ -46,7 +48,6 @@
     row-gap: 0px;
     justify-items: center;
     justify-content: center;
-
 }
 
 .button-2, 
@@ -71,9 +72,9 @@
     font-size: xx-large;
     color:aliceblue;
     font-weight: 800;
-    padding: 12px;
     height: 95px;
     width: 95px;
+    border-color:antiquewhite;
 }
 
 .operators {
@@ -98,6 +99,8 @@
     font-size: xx-large;
     color:black;
     font-weight: 800;
+    border-color:antiquewhite;
+    border-radius: 24px;
 }
 
 .holding {
@@ -106,4 +109,5 @@
 
 .display {
     height: 50px;
+
 }

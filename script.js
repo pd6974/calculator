@@ -18,24 +18,26 @@ let hold
 container.addEventListener("click", (e) => {
     //I don't love the display holding the previous operator because it looks a little weird, but the calculator works!
     if((holder.textContent === hold) && (e.target.id == "*" || e.target.id == "+" || e.target.id == "-" || e.target.id == "/")) {
-        x = holder.textContent.slice(1)
-        console.log(x)
-        ope = e.target.id
         newHoldNumber = solve(x, ope)
-        hold = ope + " " + newHoldNumber 
+        ope = e.target.id
+        hold = newHoldNumber + " " + ope 
         holder.textContent = hold
         displayDiv.textContent = ""
-        console.log("Gotcha!")
-        console.log(hold)
+        x = newHoldNumber
     }
     else if(e.target.id == "*" || e.target.id == "+" || e.target.id == "-" || e.target.id == "/") {
         x = displayDiv.textContent;
         ope = e.target.id
-        hold = ope + x
+        hold = x + ope
         holder.textContent = hold
         displayDiv.textContent = ""
     }
     else if (e.target.id == "Enter") {
+        x = holder.textContent.slice(0, -2)
+        console.log(x)
+        ope = holder.textContent
+        ope = ope[ope.length-1]
+        console.log(ope)
         displayDiv.textContent = (solve(x, ope))
         holder.textContent = ""
     }
