@@ -37,6 +37,7 @@
 
 .container {
     display: flex;
+    flex-direction: row;
     border-style: hidden;
     background-color: aqua;
 }
@@ -48,6 +49,15 @@
     row-gap: 0px;
     justify-items: center;
     justify-content: center;
+}
+
+.extra {
+    display:flex;
+    flex-direction: column;
+}
+
+.extra1 {
+    flex-grow: 2;
 }
 
 .button-2, 
@@ -62,7 +72,9 @@
 .button7,
 .button8,
 .button9,
-.operatorButton {
+.operatorButton,
+.extra0,
+.extra1 {
     background-color: seagreen;
     display: flex;
     margin: 0px;

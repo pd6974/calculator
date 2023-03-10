@@ -4,6 +4,9 @@ makeGrid();
 
 const operators = ['/', '*', '-', '+'];
 
+const extras = ['.', 'Enter']
+
+
 // add operators to calculator
 const operatorsDiv = document.querySelector('.operators');
 makeOperatorGrid();
@@ -28,7 +31,7 @@ container.addEventListener("click", (e) => {
     else if(e.target.id == "*" || e.target.id == "+" || e.target.id == "-" || e.target.id == "/") {
         x = displayDiv.textContent;
         ope = e.target.id
-        hold = x + ope
+        hold = x + " " + ope
         holder.textContent = hold
         displayDiv.textContent = ""
     }
@@ -50,7 +53,11 @@ container.addEventListener("click", (e) => {
 function solve(a, op) {
     b = Number(displayDiv.textContent)
     a = Number(a)
+    if (a == NaN || b == NaN) {
+        return "Error"
+    } else {
     return operate(op, a, b)
+    }
 }
 
 
@@ -84,8 +91,8 @@ function makeGrid() {
             numbersDiv.appendChild(gridButton);
             gridButton.classList.add(`button${i}`);
             if (i == -1){
-                gridButton.textContent = "Enter"
-                gridButton.setAttribute('id', "Enter")
+                gridButton.textContent = "."
+                gridButton.setAttribute('id', ".")
             } else if (i == -2) {
                 gridButton.textContent = "AC"
                 gridButton.setAttribute('id', "AC")
@@ -95,6 +102,7 @@ function makeGrid() {
             }
     }
 }
+
 
 // logic for add operators to calculator
 function makeOperatorGrid () {
@@ -127,12 +135,40 @@ function divide(a, b) {
 
 function operate(op, a, b) {
     if(op === '+') {
-        return sum(a, b);
+        x = sum(a, b);
+        if (!Number.isInteger(x)) {
+            x = roundToFour(x)
+            return x;
+        } else {
+        return x;
+        }
     } else if(op === '-') {
-        return subtract(a, b);
+        x = subtract(a, b);
+        if (!Number.isInteger(x)) {
+            x = roundToFour(x)
+            return x;
+        } else {
+        return x;
+        }
     } else if(op === '*') {
-        return multiply(a, b);
+        x = multiply(a, b);
+        if (!Number.isInteger(x)) {
+            x = roundToFour(x)
+            return x;
+        } else {
+        return x;
+        }
     } else if(op === '/') {
-        return divide(a, b);
+        x = divide(a, b);
+        if (!Number.isInteger(x)) {
+            x = roundToFour(x)
+            return x;
+        } else {
+        return x;
+        }
     }
+}
+
+function roundToFour(num) {
+    return +(Math.round(num + "e+4")  + "e-4");
 }
