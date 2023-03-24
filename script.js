@@ -46,6 +46,12 @@ container.addEventListener("click", (e) => {
     } else if (e.target.id == "Del") {
         x = displayDiv.textContent.slice(0, -1)
         displayDiv.textContent = x
+    } else if (e.target.id == ".") {
+        x = Number(displayDiv.textContent)
+        console.log(x)
+        if (Number.isInteger(x)) {
+            displayDiv.textContent += e.target.id
+        }
     }
 
     //function to display the numbers
@@ -80,7 +86,7 @@ function displayNumber(e) {
         }
         else if (e.target.id == "Enter") {
             
-        }
+        } 
     }
 }
 
