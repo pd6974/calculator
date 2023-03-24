@@ -43,6 +43,9 @@ container.addEventListener("click", (e) => {
         console.log(ope)
         displayDiv.textContent = (solve(x, ope))
         holder.textContent = ""
+    } else if (e.target.id == "Del") {
+        x = displayDiv.textContent.slice(0, -1)
+        displayDiv.textContent = x
     }
 
     //function to display the numbers
@@ -77,9 +80,6 @@ function displayNumber(e) {
         }
         else if (e.target.id == "Enter") {
             
-        } else {
-            var clickedItem = e.target.id
-            displayDiv.textContent = ""
         }
     }
 }
