@@ -166,7 +166,9 @@ function operate(op, a, b) {
         }
     } else if(op === '/') {
         x = divide(a, b);
-        if (!Number.isInteger(x)) {
+        if (a == 0 || b == 0) {
+            return "Error"
+        } else if (!Number.isInteger(x)) {
             x = roundToFour(x)
             return x;
         } else {
