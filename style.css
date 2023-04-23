@@ -65,18 +65,28 @@
 .operatorButton,
 .extra0,
 .extra1 {
-    background-color: seagreen;
+    background: repeating-conic-gradient(from 3deg at 50% 120%, 
+    rgb(187, 187, 187),
+    aliceblue 2deg 5deg,
+    rgb(187, 187, 187),
+    aliceblue 7deg 10deg,
+    rgb(187, 187, 187) 15deg 16deg,
+    aliceblue,
+    rgb(187, 187, 187) 20deg);
     display: flex;
     margin: 0px;
     justify-self: stretch;
     align-items: center;
     justify-content: center;
     font-size: xx-large;
-    color:aliceblue;
+    color: navy;
     font-weight: 800;
     height: 95px;
     width: 95px;
     border-color:antiquewhite;
+    clip-path: polygon(0% 0, 100% 0%, 100% 66%, 65% 100%, 36% 100%, 0% 65%);
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
 }
 
 .operators {
